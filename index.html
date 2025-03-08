@@ -1,0 +1,313 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Event Networking App
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Roboto', sans-serif;
+        }
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+        .mySlides {
+            display: none;
+        }
+        .fade {
+            animation-name: fade;
+            animation-duration: 1.5s;
+        }
+        @keyframes fade {
+            from {opacity: .4} 
+            to {opacity: 1}
+        }
+  </style>
+ </head>
+ <body class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-white">
+  <div class="container mx-auto p-4">
+   <div class="flex flex-col items-center">
+    <div class="flex items-center space-x-4">
+     <img alt="Webex logo" class="w-16 h-16" height="100" src="https://storage.googleapis.com/a1aa/image/cqOgRWiMryL4GvakVXISq5w-gQ8wjhtcszZIW_UniXc.jpg" width="100"/>
+     <div>
+      <h1 class="text-4xl font-bold text-yellow-400">
+       Event Networking App
+      </h1>
+     </div>
+    </div>
+    <div class="mt-8 flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-4">
+     <div class="relative">
+      <img alt="Tablet showing a video call with multiple participants" class="w-full md:w-96 lg:w-[600px]" height="400" src="https://storage.googleapis.com/a1aa/image/7msBA_OHOjgREnTVd2yf_t2y9DR6wnSjW49mJ5fnTcg.jpg" width="600"/>
+      <div class="absolute inset-0 flex items-center justify-center">
+       <div class="bg-black bg-opacity-50 p-2 rounded">
+        <p class="text-white">
+         Webex
+        </p>
+       </div>
+      </div>
+     </div>
+     <div class="relative">
+      <img alt="Phone showing a video call with multiple participants" class="w-full md:w-48 lg:w-64" height="600" src="https://storage.googleapis.com/a1aa/image/sclXlvTWUr-3kKipkzwKvZ3uVS2zuWEWFr03LCsTNMU.jpg" width="300"/>
+      <div class="absolute inset-0 flex items-center justify-center">
+       <div class="bg-black bg-opacity-50 p-2 rounded">
+        <p class="text-white">
+         Webex
+        </p>
+       </div>
+      </div>
+      <div class="absolute top-1/4 right-0 transform translate-x-1/2 -translate-y-1/2">
+       <i class="fas fa-thumbs-up text-yellow-400 text-3xl">
+       </i>
+      </div>
+      <div class="absolute bottom-1/4 right-0 transform translate-x-1/2 translate-y-1/2">
+       <i class="fas fa-laugh text-yellow-400 text-3xl">
+       </i>
+      </div>
+     </div>
+    </div>
+    <div class="mt-12 w-full">
+     <h2 class="text-3xl font-bold text-center mb-6">
+      Event Management Tasks
+     </h2>
+     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+       <h3 class="text-xl font-bold mb-2">
+        Task 1: Schedule Event
+       </h3>
+       <p>
+        Plan and schedule your event with ease. Set the date, time, and location.
+       </p>
+       <button class="mt-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded" onclick="openScheduleModal()">
+        Schedule Now
+       </button>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+       <h3 class="text-xl font-bold mb-2">
+        Task 2: Invite Participants
+       </h3>
+       <p>
+        Send invitations to your participants and manage RSVPs.
+       </p>
+       <button class="mt-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded" onclick="openInviteModal()">
+        Invite Now
+       </button>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+       <h3 class="text-xl font-bold mb-2">
+        Task 3: Manage Agenda
+       </h3>
+       <p>
+        Create and manage the event agenda. Add sessions and speakers.
+       </p>
+       <button class="mt-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded" onclick="openManageModal()">
+        Manage Now
+       </button>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+       <h3 class="text-xl font-bold mb-2">
+        Task 4: Track Attendance
+       </h3>
+       <p>
+        Monitor and track the attendance of your event participants.
+       </p>
+       <button class="mt-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded" onclick="alert('Track Attendance functionality coming soon!')">
+        Track Now
+       </button>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+       <h3 class="text-xl font-bold mb-2">
+        Task 5: Feedback Collection
+       </h3>
+       <p>
+        Collect feedback from participants to improve future events.
+       </p>
+       <button class="mt-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded" onclick="alert('Feedback Collection functionality coming soon!')">
+        Collect Now
+       </button>
+      </div>
+      <div class="bg-gray-800 p-4 rounded-lg shadow-lg">
+       <h3 class="text-xl font-bold mb-2">
+        Task 6: Generate Reports
+       </h3>
+       <p>
+        Generate detailed reports on event performance and participant engagement.
+       </p>
+       <button class="mt-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded" onclick="alert('Generate Reports functionality coming soon!')">
+        Generate Now
+       </button>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <!-- Schedule Event Modal -->
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden" id="scheduleModal">
+   <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+    <h2 class="text-2xl font-bold mb-4">
+     Schedule Event
+    </h2>
+    <div class="mb-4">
+     <label class="block text-white mb-2" for="eventDate">
+      Select Date:
+     </label>
+     <input class="w-full p-2 rounded-lg bg-gray-700 text-white" id="eventDate" type="date"/>
+    </div>
+    <div class="mb-4">
+     <label class="block text-white mb-2" for="eventTime">
+      Select Time:
+     </label>
+     <input class="w-full p-2 rounded-lg bg-gray-700 text-white" id="eventTime" type="time"/>
+    </div>
+    <div class="flex justify-end">
+     <button class="bg-gray-600 text-white px-4 py-2 rounded mr-2" onclick="closeScheduleModal()">
+      Cancel
+     </button>
+     <button class="bg-yellow-400 text-gray-900 px-4 py-2 rounded" onclick="alert('Event Scheduled!')">
+      Schedule
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Invite Participants Modal -->
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden" id="inviteModal">
+   <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-11/12 md:w-1/2 lg:w-1/3">
+    <h2 class="text-2xl font-bold mb-4">
+     Invite Participants
+    </h2>
+    <ul class="mb-4">
+     <li>
+      <label class="inline-flex items-center">
+       <input class="form-checkbox text-yellow-400" type="checkbox"/>
+       <span class="ml-2">
+        John Doe
+       </span>
+      </label>
+     </li>
+     <li>
+      <label class="inline-flex items-center">
+       <input class="form-checkbox text-yellow-400" type="checkbox"/>
+       <span class="ml-2">
+        Jane Smith
+       </span>
+      </label>
+     </li>
+     <li>
+      <label class="inline-flex items-center">
+       <input class="form-checkbox text-yellow-400" type="checkbox"/>
+       <span class="ml-2">
+        Alice Johnson
+       </span>
+      </label>
+     </li>
+     <li>
+      <label class="inline-flex items-center">
+       <input class="form-checkbox text-yellow-400" type="checkbox"/>
+       <span class="ml-2">
+        Bob Brown
+       </span>
+      </label>
+     </li>
+     <li>
+      <label class="inline-flex items-center">
+       <input class="form-checkbox text-yellow-400" type="checkbox"/>
+       <span class="ml-2">
+        Charlie Davis
+       </span>
+      </label>
+     </li>
+    </ul>
+    <div class="flex justify-end">
+     <button class="bg-gray-600 text-white px-4 py-2 rounded mr-2" onclick="closeInviteModal()">
+      Cancel
+     </button>
+     <button class="bg-yellow-400 text-gray-900 px-4 py-2 rounded">
+      Send Invites
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Manage Agenda Modal -->
+  <div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden" id="manageModal">
+   <div class="bg-gray-800 p-6 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3">
+    <h2 class="text-2xl font-bold mb-4">
+     Manage Agenda
+    </h2>
+    <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+     <div class="flex-1">
+      <img alt="Conference video" class="w-full h-64 object-cover rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/zlDrQIBdKu6ykVM0necW5zKJAA4gQ2jyNkSEYVNf29c.jpg" width="600"/>
+     </div>
+     <div class="flex-1">
+      <textarea class="w-full h-64 p-2 rounded-lg bg-gray-700 text-white" placeholder="Write your message here..."></textarea>
+      <button class="mt-4 bg-yellow-400 text-gray-900 px-4 py-2 rounded w-full" onclick="alert('Message announced!')">
+       Announce
+      </button>
+     </div>
+    </div>
+    <div class="flex justify-end mt-4">
+     <button class="bg-gray-600 text-white px-4 py-2 rounded" onclick="closeManageModal()">
+      Close
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- Slideshow Container -->
+  <div class="slideshow-container mt-12">
+   <div class="mySlides fade">
+    <img alt="Event management picture 1" class="w-full h-64 object-cover rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/UJFnz3SyRp3mwAqOe8HAMRNk4ep-0znKtyN_EzjnrYQ.jpg" width="800"/>
+   </div>
+   <div class="mySlides fade">
+    <img alt="Event management picture 2" class="w-full h-64 object-cover rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/t-X4MER9L3wWkJrFUiNnJzf28SVdiKtsFOwqrjFxy7w.jpg" width="800"/>
+   </div>
+   <div class="mySlides fade">
+    <img alt="Event management picture 3" class="w-full h-64 object-cover rounded-lg" height="400" src="https://storage.googleapis.com/a1aa/image/gzvVQyfGC52_gVrJBkSdwXku_L598sDm_fv1qtfskCU.jpg" width="800"/>
+   </div>
+  </div>
+  <script>
+   let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}    
+        slides[slideIndex-1].style.display = "block";  
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+
+    function openScheduleModal() {
+        document.getElementById('scheduleModal').classList.remove('hidden');
+    }
+
+    function closeScheduleModal() {
+        document.getElementById('scheduleModal').classList.add('hidden');
+    }
+
+    function openInviteModal() {
+        document.getElementById('inviteModal').classList.remove('hidden');
+    }
+
+    function closeInviteModal() {
+        document.getElementById('inviteModal').classList.add('hidden');
+    }
+
+    function openManageModal() {
+        document.getElementById('manageModal').classList.remove('hidden');
+    }
+
+    function closeManageModal() {
+        document.getElementById('manageModal').classList.add('hidden');
+    }
+  </script>
+ </body>
+</html>
